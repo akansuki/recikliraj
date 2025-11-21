@@ -1,0 +1,47 @@
+[
+  {
+    "type": "paper",
+    "coordinates": [45.2671, 19.8335],
+    "name": "Reciklaža papira - Novi Sad Centar"
+  },
+  {
+    "type": "paper",
+    "coordinates": [45.255, 19.845],
+    "name": "Reciklaža papira - Novi Sad Liman"
+  },
+  {
+    "type": "paper",
+    "coordinates": [45.278, 19.82],
+    "name": "Reciklaža papira - Novi Sad Detelinara"
+  },
+  {
+    "type": "battery",
+    "coordinates": [45.26, 19.838],
+    "name": "Reciklaža baterija - Novi Sad Centar"
+  },
+  {
+    "type": "battery",
+    "coordinates": [45.25, 19.85],
+    "name": "Reciklaža baterija - Novi Sad Petrovaradin"
+  },
+  {
+    "type": "battery",
+    "coordinates": [45.275, 19.815],
+    "name": "Reciklaža baterija - Novi Sad Grbavica"
+  },
+  {
+    "type": "aluminum",
+    "coordinates": [45.265, 19.84],
+    "name": "Reciklaža aluminijuma - Novi Sad Centar"
+  },
+  {
+    "type": "aluminum",
+    "coordinates": [45.245, 19.855],
+    "name": "Reciklaža aluminijuma - Novi Sad Telep"
+  },
+  {
+    "type": "aluminum",
+    "coordinates": [45.27, 19.825],
+    "name": "Reciklaža aluminijuma - Novi Sad Rotkvarija"
+  }
+]
