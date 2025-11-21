@@ -71,7 +71,7 @@
           position: fixed;
           bottom: 50px;
           right: 50px;
-          width: 220px;
+          width: 160px;
           font-size: 14px;
         }
       }
@@ -218,8 +218,7 @@
         <p style="font-size: 12px">
           Ova mapa prikazuje reciklažna mesta za papir, baterije i
           aluminijum.<br /><br />
-          <strong>Podaci:</strong><br />
-          - Podaci ažurirani: Novembra 2025
+          <i>Podaci ažurirani: Novembra 2025</i>
         </p>
       </div>
     </div>
@@ -231,9 +230,9 @@
       </div>
       <div class="panel-content">
         <p>
-          Papir: 5<br />
-          Baterije: 5<br />
-          Aluminijum: 5
+          Papir: ?<br />
+          Baterije: ?<br />
+          Aluminijum: ?
         </p>
       </div>
     </div>
@@ -246,15 +245,16 @@
       <div class="panel-content">
         <div style="margin-left: 5px">
           <p style="margin: 0 0 8px 0">
-            <i class="fa fa-recycle" style="color: green"></i> Reciklaža papira
+            <i class="fa fa-newspaper" style="color: orange"></i> Papir
           </p>
           <p style="margin: 0 0 8px 0">
-            <i class="fa fa-battery-full" style="color: blue"></i> Reciklaža
-            baterija
+            <i class="fa fa-battery-full" style="color: blue"></i> Baterije
           </p>
           <p style="margin: 0 0 8px 0">
-            <i class="fa fa-recycle" style="color: purple"></i> Reciklaža
-            aluminijuma
+            <i class="fa fa-recycle" style="color: purple"></i> Aluminijum
+          </p>
+          <p style="margin: 0 0 8px 0">
+            <i class="fa fa-recycle" style="color: green"></i> Kombinovano
           </p>
         </div>
       </div>
@@ -331,6 +331,39 @@
       map_51cbb90e3763f2ebacfb9351343e5534
     );
 
+    // Geolocation support - get user's location
+    var userLocationMarker = null;
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
+          var userLat = position.coords.latitude;
+          var userLng = position.coords.longitude;
+
+          // Center map on user's location with appropriate zoom
+          map_51cbb90e3763f2ebacfb9351343e5534.setView([userLat, userLng], 14);
+
+          // Add marker for user's location
+          var userIcon = L.AwesomeMarkers.icon({
+            markerColor: "red",
+            iconColor: "white",
+            icon: "user",
+            prefix: "fa",
+            extraClasses: "fa-rotate-0",
+          });
+
+          userLocationMarker = L.marker([userLat, userLng], { icon: userIcon })
+            .addTo(map_51cbb90e3763f2ebacfb9351343e5534)
+            .bindPopup("Vaša lokacija");
+        },
+        function (error) {
+          // User denied permission or geolocation unavailable
+          // Keep default center (Novi Sad)
+          console.log("Geolocation not available: ", error.message);
+        }
+      );
+    }
+
     // Load markers from JSON and create them dynamically
     var markersData = [];
     var markerCounts = {
@@ -339,46 +372,209 @@
       paper: 0,
     };
 
+    // Function to validate marker data
+    function validateMarker(markerData, index) {
+      var errors = [];
+
+      // Check if markerData exists
+      if (!markerData) {
+        errors.push("Marker data is missing");
+        return { valid: false, errors: errors };
+      }
+
+      // Check for types (array) or type (single) - support both formats
+      var types = [];
+      if (markerData.types) {
+        // New format: types array
+        if (!Array.isArray(markerData.types)) {
+          errors.push("'types' must be an array");
+        } else if (markerData.types.length === 0) {
+          errors.push("'types' array cannot be empty");
+        } else {
+          markerData.types.forEach(function (type, i) {
+            if (!["paper", "battery", "aluminum"].includes(type)) {
+              errors.push(
+                "Invalid type at index " +
+                  i +
+                  ": '" +
+                  type +
+                  "'. Must be 'paper', 'battery', or 'aluminum'"
+              );
+            } else {
+              types.push(type);
+            }
+          });
+        }
+      } else if (markerData.type) {
+        // Old format: single type (for backward compatibility)
+        if (!["paper", "battery", "aluminum"].includes(markerData.type)) {
+          errors.push(
+            "Invalid 'type': '" +
+              markerData.type +
+              "'. Must be 'paper', 'battery', or 'aluminum'"
+          );
+        } else {
+          types.push(markerData.type);
+        }
+      } else {
+        errors.push("Missing 'type' or 'types' field");
+      }
+
+      if (!markerData.coordinates) {
+        errors.push("Missing 'coordinates' field");
+      } else if (!Array.isArray(markerData.coordinates)) {
+        errors.push("'coordinates' must be an array [latitude, longitude]");
+      } else if (markerData.coordinates.length !== 2) {
+        errors.push(
+          "'coordinates' must have exactly 2 values [latitude, longitude]"
+        );
+      } else {
+        var lat = markerData.coordinates[0];
+        var lng = markerData.coordinates[1];
+
+        if (typeof lat !== "number" || typeof lng !== "number") {
+          errors.push("Coordinates must be numbers");
+        } else {
+          if (lat < -90 || lat > 90) {
+            errors.push("Latitude must be between -90 and 90, got: " + lat);
+          }
+          if (lng < -180 || lng > 180) {
+            errors.push("Longitude must be between -180 and 180, got: " + lng);
+          }
+        }
+      }
+
+      if (!markerData.name) {
+        errors.push("Missing 'name' field");
+      } else if (
+        typeof markerData.name !== "string" ||
+        markerData.name.trim() === ""
+      ) {
+        errors.push("'name' must be a non-empty string");
+      }
+
+      return {
+        valid: errors.length === 0,
+        errors: errors,
+        types: types, // Return validated types array
+      };
+    }
+
+    // Function to log validation errors to console
+    var validationErrors = [];
+    function logValidationErrors() {
+      if (validationErrors.length === 0) {
+        return;
+      }
+
+      // Log to console only
+      console.error("Data validation errors:", validationErrors);
+    }
+
     // Function to get icon and color based on marker type
     function getMarkerStyle(type) {
       var styles = {
-        paper: { icon: "recycle", color: "green" },
+        paper: { icon: "newspaper", color: "orange" },
         battery: { icon: "battery-full", color: "blue" },
         aluminum: { icon: "recycle", color: "purple" },
       };
       return styles[type] || { icon: "circle", color: "gray" };
     }
 
-    // Function to create marker from data
-    function createMarker(markerData) {
-      var marker = L.marker(markerData.coordinates, {}).addTo(
-        map_51cbb90e3763f2ebacfb9351343e5534
-      );
+    // Function to calculate offset coordinates for multiple markers at same location
+    function getOffsetCoordinates(baseCoords, index, total) {
+      // Small offset to spread markers (approximately 50 meters)
+      var offsetDistance = 0.0005; // degrees (roughly 50m)
+      var angle = (2 * Math.PI * index) / total; // Distribute in circle
+      return [
+        baseCoords[0] + offsetDistance * Math.cos(angle),
+        baseCoords[1] + offsetDistance * Math.sin(angle),
+      ];
+    }
 
-      var style = getMarkerStyle(markerData.type);
-      var icon = L.AwesomeMarkers.icon({
-        markerColor: style.color,
-        iconColor: "white",
-        icon: style.icon,
-        prefix: "fa",
-        extraClasses: "fa-rotate-0",
-      });
-      marker.setIcon(icon);
+    // Function to create marker(s) from data - supports multiple types
+    function createMarker(markerData, types) {
+      var markers = [];
 
-      var popup = L.popup({ maxWidth: "100%" });
-      var htmlContent = $(
-        '<div style="width: 100.0%; height: 100.0%;">' +
-          markerData.name +
-          "</div>"
-      )[0];
-      popup.setContent(htmlContent);
-      marker.bindPopup(popup);
+      // Get types array (support both old 'type' and new 'types' format)
+      var markerTypes = types || markerData.types || [markerData.type];
 
-      marker.bindTooltip("<div>" + markerData.name + "</div>", {
-        sticky: true,
-      });
+      // If multiple types, create single universal green recycling icon
+      if (markerTypes.length > 1) {
+        var marker = L.marker(markerData.coordinates, {}).addTo(
+          map_51cbb90e3763f2ebacfb9351343e5534
+        );
 
-      return marker;
+        // Universal green recycling icon for multiple types
+        var icon = L.AwesomeMarkers.icon({
+          markerColor: "green",
+          iconColor: "white",
+          icon: "recycle",
+          prefix: "fa",
+          extraClasses: "fa-rotate-0",
+        });
+        marker.setIcon(icon);
+
+        // Show all types in popup
+        var typeLabels = {
+          paper: "Papir",
+          battery: "Baterije",
+          aluminum: "Aluminijum",
+        };
+        var typeList = markerTypes
+          .map(function (t) {
+            return typeLabels[t];
+          })
+          .join(", ");
+        var popupText =
+          markerData.name + "<br><small>Tipovi: " + typeList + "</small>";
+
+        var popup = L.popup({ maxWidth: "100%" });
+        var htmlContent = $(
+          '<div style="width: 100.0%; height: 100.0%;">' + popupText + "</div>"
+        )[0];
+        popup.setContent(htmlContent);
+        marker.bindPopup(popup);
+
+        marker.bindTooltip("<div>" + markerData.name + "</div>", {
+          sticky: true,
+        });
+
+        markers.push(marker);
+      } else {
+        // Single type - create marker with specific icon
+        var type = markerTypes[0];
+        var marker = L.marker(markerData.coordinates, {}).addTo(
+          map_51cbb90e3763f2ebacfb9351343e5534
+        );
+
+        var style = getMarkerStyle(type);
+        var icon = L.AwesomeMarkers.icon({
+          markerColor: style.color,
+          iconColor: "white",
+          icon: style.icon,
+          prefix: "fa",
+          extraClasses: "fa-rotate-0",
+        });
+        marker.setIcon(icon);
+
+        var popup = L.popup({ maxWidth: "100%" });
+        var htmlContent = $(
+          '<div style="width: 100.0%; height: 100.0%;">' +
+            markerData.name +
+            "</div>"
+        )[0];
+        popup.setContent(htmlContent);
+        marker.bindPopup(popup);
+
+        marker.bindTooltip("<div>" + markerData.name + "</div>", {
+          sticky: true,
+        });
+
+        markers.push(marker);
+      }
+
+      return markers;
     }
 
     // Function to update statistics panel
@@ -405,33 +601,64 @@
     fetch("markers.json")
       .then((response) => response.json())
       .then((data) => {
+        // Validate that data is an array
+        if (!Array.isArray(data)) {
+          console.error("Error: markers.json must contain an array");
+          validationErrors.push("markers.json mora biti niz objekata");
+          logValidationErrors();
+          return;
+        }
+
         markersData = data;
+        validationErrors = []; // Reset errors
 
-        // Create markers and count them
-        data.forEach(function (markerData) {
-          createMarker(markerData);
+        // Validate and create markers
+        data.forEach(function (markerData, index) {
+          var validation = validateMarker(markerData, index);
 
-          // Count markers by type
-          if (markerData.type === "battery") {
-            markerCounts.battery++;
-          } else if (markerData.type === "aluminum") {
-            markerCounts.aluminum++;
-          } else if (markerData.type === "paper") {
-            markerCounts.paper++;
+          if (validation.valid) {
+            // Create markers (one per type) - supports multiple types per location
+            createMarker(markerData, validation.types);
+
+            // Count each type (a location with multiple types counts in all categories)
+            validation.types.forEach(function (type) {
+              if (type === "battery") {
+                markerCounts.battery++;
+              } else if (type === "aluminum") {
+                markerCounts.aluminum++;
+              } else if (type === "paper") {
+                markerCounts.paper++;
+              }
+            });
+          } else {
+            // Log validation errors
+            console.error(
+              "Invalid marker at index " + index + ":",
+              validation.errors
+            );
+            validation.errors.forEach(function (error) {
+              validationErrors.push("Marker " + (index + 1) + ": " + error);
+            });
           }
         });
 
         // Update statistics panel
         updateStatistics();
 
-        // Validate counts (log warnings if needed)
+        // Log validation errors if any (console only)
+        logValidationErrors();
+
+        // Log validation summary
         var totalMarkers =
           markerCounts.battery + markerCounts.aluminum + markerCounts.paper;
-        console.log("Marker validation:", {
+        var skippedMarkers = data.length - totalMarkers;
+        console.log("Marker validation summary:", {
           total: totalMarkers,
           battery: markerCounts.battery,
           aluminum: markerCounts.aluminum,
           paper: markerCounts.paper,
+          skipped: skippedMarkers,
+          errors: validationErrors.length,
         });
       })
       .catch((error) => {
