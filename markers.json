@@ -1,522 +1,1043 @@
 [
   {
-    "type": "paper",
-    "coordinates": [45.24832, 19.840079],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.24832,
+      19.840079
+    ],
     "name": "Maksima Gorkog 1"
   },
   {
-    "type": "paper",
-    "coordinates": [45.249952, 19.84663],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.249952,
+      19.84663
+    ],
     "name": "Maksima Gorkog 10"
   },
   {
-    "type": "paper",
-    "coordinates": [45.25116, 19.850741],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.25116,
+      19.850741
+    ],
     "name": "Maksima Gorkog 36"
   },
   {
-    "type": "paper",
-    "coordinates": [45.250902, 19.84959],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.250902,
+      19.84959
+    ],
     "name": "Maksima Gorkog 29"
   },
   {
-    "type": "paper",
-    "coordinates": [45.251764, 19.851879],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.251764,
+      19.851879
+    ],
     "name": "Maksima Gorkog 41"
   },
   {
-    "type": "paper",
-    "coordinates": [45.252072, 19.853701],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.252072,
+      19.853701
+    ],
     "name": "Maksima Gorkog 53"
   },
   {
-    "type": "paper",
-    "coordinates": [45.252311, 19.855118],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.252311,
+      19.855118
+    ],
     "name": "Maksima Gorkog 61"
   },
   {
-    "type": "paper",
-    "coordinates": [45.250221, 19.847255],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.250221,
+      19.847255
+    ],
     "name": "Maksima Gorkog 17"
   },
   {
-    "type": "paper",
-    "coordinates": [45.262934, 19.831036],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.262934,
+      19.831036
+    ],
     "name": "Bulevar Oslobodjenja 9"
   },
   {
-    "type": "paper",
-    "coordinates": [45.262034, 19.83119],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.262034,
+      19.83119
+    ],
     "name": "Bulevar Oslobodjenja 12"
   },
   {
-    "type": "paper",
-    "coordinates": [45.261331, 19.832081],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.261331,
+      19.832081
+    ],
     "name": "Bulevar Oslobodjenja 31"
   },
   {
-    "type": "paper",
-    "coordinates": [45.258937, 19.832577],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.258937,
+      19.832577
+    ],
     "name": "Bulevar Oslobodjenja 32"
   },
   {
-    "type": "paper",
-    "coordinates": [45.258637, 19.831541],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.258637,
+      19.831541
+    ],
     "name": "Bulevar Oslobodjenja 40"
   },
   {
-    "type": "paper",
-    "coordinates": [45.259822, 19.833464],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.259822,
+      19.833464
+    ],
     "name": "Bulevar Oslobodjenja 43"
   },
   {
-    "type": "paper",
-    "coordinates": [45.258706, 19.833408],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.258706,
+      19.833408
+    ],
     "name": "Bulevar Oslobodjenja 51"
   },
   {
-    "type": "paper",
-    "coordinates": [45.256777, 19.834581],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.256777,
+      19.834581
+    ],
     "name": "Bulevar Oslobodjenja 69"
   },
   {
-    "type": "paper",
-    "coordinates": [45.253364, 19.835774],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.253364,
+      19.835774
+    ],
     "name": "Bulevar Oslobodjenja 70"
   },
   {
-    "type": "paper",
-    "coordinates": [45.25293, 19.8362],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.25293,
+      19.8362
+    ],
     "name": "Bulevar Oslobodjenja 72"
   },
   {
-    "type": "paper",
-    "coordinates": [45.2511, 19.837186],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.2511,
+      19.837186
+    ],
     "name": "Bulevar Oslobodjenja 76"
   },
   {
-    "type": "paper",
-    "coordinates": [45.249723, 19.837992],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.249723,
+      19.837992
+    ],
     "name": "Bulevar Oslobodjenja 82"
   },
   {
-    "type": "paper",
-    "coordinates": [45.251493, 19.837489],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.251493,
+      19.837489
+    ],
     "name": "Bulevar Oslobodjenja 89"
   },
   {
-    "type": "paper",
-    "coordinates": [45.248307, 19.838779],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.248307,
+      19.838779
+    ],
     "name": "Bulevar Oslobodjenja 90"
   },
   {
-    "type": "paper",
-    "coordinates": [45.247279, 19.839408],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.247279,
+      19.839408
+    ],
     "name": "Bulevar Oslobodjenja 92"
   },
   {
-    "type": "paper",
-    "coordinates": [45.250591, 19.837961],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.250591,
+      19.837961
+    ],
     "name": "Bulevar Oslobodjenja 93"
   },
   {
-    "type": "paper",
-    "coordinates": [45.249894, 19.838274],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.249894,
+      19.838274
+    ],
     "name": "Bulevar Oslobodjenja 95"
   },
   {
-    "type": "paper",
-    "coordinates": [45.246301, 19.83992],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.246301,
+      19.83992
+    ],
     "name": "Bulevar Oslobodjenja 96"
   },
   {
-    "type": "paper",
-    "coordinates": [45.248732, 19.838948],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.248732,
+      19.838948
+    ],
     "name": "Bulevar Oslobodjenja 105"
   },
   {
-    "type": "paper",
-    "coordinates": [45.243483, 19.841965],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.243483,
+      19.841965
+    ],
     "name": "Bulevar Oslobodjenja 127"
   },
   {
-    "type": "paper",
-    "coordinates": [45.241935, 19.842797],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.241935,
+      19.842797
+    ],
     "name": "Bulevar Oslobodjenja 133"
   },
   {
-    "type": "paper",
-    "coordinates": [45.24729, 19.839792],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.24729,
+      19.839792
+    ],
     "name": "Bulevar Oslobodjenja 113"
   },
   {
-    "type": "paper",
-    "coordinates": [45.240488, 19.847541],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.240488,
+      19.847541
+    ],
     "name": "Resavska 2"
   },
   {
-    "type": "paper",
-    "coordinates": [45.24871, 19.846847],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.24871,
+      19.846847
+    ],
     "name": "Radnička 11"
   },
   {
-    "type": "paper",
-    "coordinates": [45.249202, 19.847929],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.249202,
+      19.847929
+    ],
     "name": "Radnička 19"
   },
   {
-    "type": "paper",
-    "coordinates": [45.249319, 19.849359],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.249319,
+      19.849359
+    ],
     "name": "Radnička 21"
   },
   {
-    "type": "paper",
-    "coordinates": [45.249802, 19.84988],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.249802,
+      19.84988
+    ],
     "name": "Radnička 31"
   },
   {
-    "type": "paper",
-    "coordinates": [45.250359, 19.851624],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.250359,
+      19.851624
+    ],
     "name": "Radnička 47"
   },
   {
-    "type": "paper",
-    "coordinates": [45.25068, 19.852732],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.25068,
+      19.852732
+    ],
     "name": "Radnička 51"
   },
   {
-    "type": "paper",
-    "coordinates": [45.251345, 19.854716],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.251345,
+      19.854716
+    ],
     "name": "Radnička 53"
   },
   {
-    "type": "paper",
-    "coordinates": [45.248641, 19.845485],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.248641,
+      19.845485
+    ],
     "name": "Sutjeska 2"
   },
   {
-    "type": "paper",
-    "coordinates": [45.246653, 19.846994],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.246653,
+      19.846994
+    ],
     "name": "Paradizo"
   },
   {
-    "type": "paper",
-    "coordinates": [45.241976, 19.847553],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.241976,
+      19.847553
+    ],
     "name": "Fruškogorska 18"
   },
   {
-    "type": "paper",
-    "coordinates": [45.247646, 19.816906],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.247646,
+      19.816906
+    ],
     "name": "Bulevar Evrope 2"
   },
   {
-    "type": "paper",
-    "coordinates": [45.240492, 19.822695],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.240492,
+      19.822695
+    ],
     "name": "Bulevar Evrope 5"
   },
   {
-    "type": "paper",
-    "coordinates": [45.247294, 19.818346],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.247294,
+      19.818346
+    ],
     "name": "Bulevar Evrope 12"
   },
   {
-    "type": "paper",
-    "coordinates": [45.242673, 19.820394],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.242673,
+      19.820394
+    ],
     "name": "Bulevar Evrope 17"
   },
   {
-    "type": "paper",
-    "coordinates": [45.244045, 19.819434],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.244045,
+      19.819434
+    ],
     "name": "Bulevar Evrope 23"
   },
   {
-    "type": "paper",
-    "coordinates": [45.245727, 19.818305],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.245727,
+      19.818305
+    ],
     "name": "Bulevar Evrope 29"
   },
   {
-    "type": "paper",
-    "coordinates": [45.240872, 19.821666],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.240872,
+      19.821666
+    ],
     "name": "Bulevar Evrope bb"
   },
   {
-    "type": "paper",
-    "coordinates": [45.240349, 19.816954],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.240349,
+      19.816954
+    ],
     "name": "Bulevar Patrijarha Pavla 8"
   },
   {
-    "type": "paper",
-    "coordinates": [45.241526, 19.804813],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.241526,
+      19.804813
+    ],
     "name": "Bulevar Patrijarha Pavla 12"
   },
   {
-    "type": "paper",
-    "coordinates": [45.240705, 19.812332],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.240705,
+      19.812332
+    ],
     "name": "Bulevar Patrijarha Pavla 14e"
   },
   {
-    "type": "paper",
-    "coordinates": [45.240524, 19.814317],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.240524,
+      19.814317
+    ],
     "name": "Bulevar Patrijarha Pavla 26"
   },
   {
-    "type": "paper",
-    "coordinates": [45.241038, 19.806748],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.241038,
+      19.806748
+    ],
     "name": "Bulevar Patrijarha Pavla 65"
   },
   {
-    "type": "paper",
-    "coordinates": [45.241469, 19.802521],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.241469,
+      19.802521
+    ],
     "name": "Bulevar Patrijarha Pavla 95"
   },
   {
-    "type": "paper",
-    "coordinates": [45.242157, 19.796235],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.242157,
+      19.796235
+    ],
     "name": "Bulevar Patrijarha Pavla 125"
   },
   {
-    "type": "paper",
-    "coordinates": [45.241987, 19.837111],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.241987,
+      19.837111
+    ],
     "name": "Šekspirova 4"
   },
   {
-    "type": "paper",
-    "coordinates": [45.240643, 19.83759],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.240643,
+      19.83759
+    ],
     "name": "Šekspirova 8"
   },
   {
-    "type": "paper",
-    "coordinates": [45.241286, 19.837403],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.241286,
+      19.837403
+    ],
     "name": "Šekspirova 11"
   },
   {
-    "type": "paper",
-    "coordinates": [45.237639, 19.839219],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.237639,
+      19.839219
+    ],
     "name": "Šekspirova 42"
   },
   {
-    "type": "paper",
-    "coordinates": [45.239563, 19.832053],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.239563,
+      19.832053
+    ],
     "name": "Balzakova 13"
   },
   {
-    "type": "paper",
-    "coordinates": [45.239423, 19.832293],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.239423,
+      19.832293
+    ],
     "name": "Balzakova 37"
   },
   {
-    "type": "paper",
-    "coordinates": [45.238227, 19.832577],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.238227,
+      19.832577
+    ],
     "name": "Balzakova 39"
   },
   {
-    "type": "paper",
-    "coordinates": [45.236621, 19.833612],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.236621,
+      19.833612
+    ],
     "name": "Balzakova 60"
   },
   {
-    "type": "paper",
-    "coordinates": [45.237424, 19.833291],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.237424,
+      19.833291
+    ],
     "name": "Balzakova 65"
   },
   {
-    "type": "paper",
-    "coordinates": [45.238181, 19.832837],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.238181,
+      19.832837
+    ],
     "name": "Balzakova 67"
   },
   {
-    "type": "paper",
-    "coordinates": [45.23668, 19.834066],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.23668,
+      19.834066
+    ],
     "name": "Balzakova 73"
   },
   {
-    "type": "paper",
-    "coordinates": [45.242459, 19.845573],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.242459,
+      19.845573
+    ],
     "name": "Narodnog Fronta 4"
   },
   {
-    "type": "paper",
-    "coordinates": [45.242016, 19.844428],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.242016,
+      19.844428
+    ],
     "name": "Narodnog Fronta 11"
   },
   {
-    "type": "paper",
-    "coordinates": [45.241841, 19.844024],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.241841,
+      19.844024
+    ],
     "name": "Narodnog Fronta 17"
   },
   {
-    "type": "paper",
-    "coordinates": [45.240882, 19.839076],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.240882,
+      19.839076
+    ],
     "name": "Narodnog Fronta 24"
   },
   {
-    "type": "paper",
-    "coordinates": [45.2438, 19.842526],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.2438,
+      19.842526
+    ],
     "name": "Dr. Ribara 2"
   },
   {
-    "type": "paper",
-    "coordinates": [45.240563, 19.848543],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.240563,
+      19.848543
+    ],
     "name": "Drage Spacić 2a"
   },
   {
-    "type": "paper",
-    "coordinates": [45.241055, 19.850424],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.241055,
+      19.850424
+    ],
     "name": "Drage Spasić 10"
   },
   {
-    "type": "paper",
-    "coordinates": [45.243556, 19.846676],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.243556,
+      19.846676
+    ],
     "name": "Milice Stojadinović Srpkinje 2"
   },
   {
-    "type": "paper",
-    "coordinates": [45.243558, 19.845522],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.243558,
+      19.845522
+    ],
     "name": "Milice Stojadinović Srpkinje 4"
   },
   {
-    "type": "paper",
-    "coordinates": [45.253291, 19.839862],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.253291,
+      19.839862
+    ],
     "name": "Jevrejska 18"
   },
   {
-    "type": "paper",
-    "coordinates": [45.252359, 19.838499],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.252359,
+      19.838499
+    ],
     "name": "Jevrejska 21"
   },
   {
-    "type": "paper",
-    "coordinates": [45.252656, 19.838324],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.252656,
+      19.838324
+    ],
     "name": "Jevrejska 36"
   },
   {
-    "type": "paper",
-    "coordinates": [45.25791, 19.84951],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.25791,
+      19.84951
+    ],
     "name": "Dončićeva 9"
   },
   {
-    "type": "paper",
-    "coordinates": [45.255286, 19.847828],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.255286,
+      19.847828
+    ],
     "name": "Konstantina Danila 2"
   },
   {
-    "type": "paper",
-    "coordinates": [45.256059, 19.850188],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.256059,
+      19.850188
+    ],
     "name": "Ignjata Pavlasa 20"
   },
   {
-    "type": "paper",
-    "coordinates": [45.256061, 19.85302],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.256061,
+      19.85302
+    ],
     "name": "Dunavska 37"
   },
   {
-    "type": "paper",
-    "coordinates": [45.256288, 19.854642],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.256288,
+      19.854642
+    ],
     "name": "Beogradski Kej 7"
   },
   {
-    "type": "paper",
-    "coordinates": [45.259651, 19.855218],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.259651,
+      19.855218
+    ],
     "name": "Beogradski Kej 31"
   },
   {
-    "type": "paper",
-    "coordinates": [45.260772, 19.85605],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.260772,
+      19.85605
+    ],
     "name": "Beogradski Kej 39"
   },
   {
-    "type": "paper",
-    "coordinates": [45.257561, 19.852144],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.257561,
+      19.852144
+    ],
     "name": "Miloša Bajića 1"
   },
   {
-    "type": "paper",
-    "coordinates": [45.256621, 19.852368],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.256621,
+      19.852368
+    ],
     "name": "Stevana Milovanova 8"
   },
   {
-    "type": "paper",
-    "coordinates": [45.25396, 19.848511],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.25396,
+      19.848511
+    ],
     "name": "Bulevar Mihajla Pupina 7"
   },
   {
-    "type": "paper",
-    "coordinates": [45.254088, 19.850448],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.254088,
+      19.850448
+    ],
     "name": "Bulevar Mihajla Pupina 19"
   },
   {
-    "type": "paper",
-    "coordinates": [45.254041, 19.852407],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.254041,
+      19.852407
+    ],
     "name": "Bulevar Mihajla Pupina 22"
   },
   {
-    "type": "paper",
-    "coordinates": [45.258625, 19.853246],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.258625,
+      19.853246
+    ],
     "name": "Vojvode Mišića 14"
   },
   {
-    "type": "paper",
-    "coordinates": [45.253574, 19.854252],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.253574,
+      19.854252
+    ],
     "name": "Vojvode Mišića 30"
   },
   {
-    "type": "paper",
-    "coordinates": [45.249295, 19.852259],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.249295,
+      19.852259
+    ],
     "name": "Stevana Musića 15"
   },
   {
-    "type": "paper",
-    "coordinates": [45.248211, 19.849236],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.248211,
+      19.849236
+    ],
     "name": "Stražilovska 37"
   },
   {
-    "type": "paper",
-    "coordinates": [45.247315, 19.818336],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.247315,
+      19.818336
+    ],
     "name": "Laze Nančića bb"
   },
   {
-    "type": "paper",
-    "coordinates": [45.243779, 19.846615],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.243779,
+      19.846615
+    ],
     "name": "Fruskogorska 6A"
   },
   {
-    "type": "paper",
-    "coordinates": [45.258569, 19.830854],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.258569,
+      19.830854
+    ],
     "name": "Branimira Ćosića pp 42"
   },
   {
-    "type": "paper",
-    "coordinates": [45.258773, 19.831269],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.258773,
+      19.831269
+    ],
     "name": "Branimira Ćosića pp 46"
   },
   {
-    "type": "paper",
-    "coordinates": [45.239514, 19.832023],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.239514,
+      19.832023
+    ],
     "name": "Balzakova 16"
   },
   {
-    "type": "paper",
-    "coordinates": [45.238286, 19.832432],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.238286,
+      19.832432
+    ],
     "name": "Balzakova 24"
   },
   {
-    "type": "paper",
-    "coordinates": [45.239458, 19.83226],
+    "types": [
+      "paper"
+    ],
+    "coordinates": [
+      45.239458,
+      19.83226
+    ],
     "name": "Balzakova 25"
   },
   {
-    "types": ["paper", "battery"],
-    "coordinates": [45.26049, 19.80656],
+    "types": [
+      "paper",
+      "battery"
+    ],
+    "coordinates": [
+      45.26049,
+      19.80656
+    ],
     "name": "Lidl Novo Naselje"
   },
   {
-    "type": "battery",
-    "coordinates": [45.249465, 19.84068],
+    "types": [
+      "battery"
+    ],
+    "coordinates": [
+      45.249465,
+      19.84068
+    ],
     "name": "NS-Battery Shop - Železnička 36"
   },
   {
-    "type": "aluminum",
-    "coordinates": [45.252489, 19.833065],
+    "types": [
+      "aluminum"
+    ],
+    "coordinates": [
+      45.252489,
+      19.833065
+    ],
     "name": "Čepom do osmeha - Ćirpanova 25"
   }
 ]

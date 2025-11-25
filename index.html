@@ -159,6 +159,121 @@
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
       }
+
+      .geolocation-button {
+        position: fixed;
+        top: 180px;
+        right: 50px;
+        z-index: 10000;
+        background: white;
+        border: 2px solid grey;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        transition: all 0.3s ease;
+      }
+
+      .geolocation-button:hover {
+        background-color: #f0f0f0;
+      }
+
+      .geolocation-button:active {
+        transform: scale(0.95);
+      }
+
+      .geolocation-button i {
+        font-size: 16px;
+      }
+
+      @media screen and (max-width: 768px) {
+        .geolocation-button {
+          display: none;
+        }
+      }
+
+      /* Extracted inline styles */
+      .panel-header h4 {
+        margin: 0;
+      }
+
+      .methodology .panel-content p {
+        font-size: 12px;
+      }
+
+      .legend-content {
+        margin-left: 5px;
+      }
+
+      .legend-item {
+        margin: 0 0 8px 0;
+      }
+
+      .icon-orange {
+        color: orange;
+      }
+
+      .icon-blue {
+        color: blue;
+      }
+
+      .icon-purple {
+        color: purple;
+      }
+
+      .icon-green {
+        color: green;
+      }
+
+      .popup-content {
+        width: 100%;
+        height: 100%;
+      }
+
+      /* Loading indicator */
+      .loading-indicator {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10001;
+        background: white;
+        border: 2px solid grey;
+        border-radius: 10px;
+        padding: 20px 30px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        font-size: 14px;
+      }
+
+      .loading-indicator.hidden {
+        display: none;
+      }
+
+      .spinner {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #3498db;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
     </style>
 
     <script>
@@ -219,7 +334,7 @@
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
     <style>
-      #map_51cbb90e3763f2ebacfb9351343e5534 {
+      #recyclingMap {
         position: relative;
         width: 100%;
         height: 100%;
@@ -234,11 +349,11 @@
   <body>
     <div class="methodology info-panel">
       <div class="panel-header" onclick="toggleContent(this)">
-        <h4 style="margin: 0">O projektu</h4>
+        <h4>O projektu</h4>
         <button class="toggle-button">−</button>
       </div>
       <div class="panel-content">
-        <p style="font-size: 12px">
+        <p>
           Ova mapa prikazuje reciklažna mesta za papir, baterije i
           aluminijum.<br /><br />
           <i>Podaci ažurirani: Novembra 2025</i>
@@ -248,7 +363,7 @@
 
     <div class="stats info-panel">
       <div class="panel-header" onclick="toggleContent(this)">
-        <h4 style="margin: 0">Statistika</h4>
+        <h4>Statistika</h4>
         <button class="toggle-button">−</button>
       </div>
       <div class="panel-content">
@@ -262,22 +377,22 @@
 
     <div class="legend info-panel">
       <div class="panel-header" onclick="toggleContent(this)">
-        <h4 style="margin: 0">Legenda:</h4>
+        <h4>Legenda:</h4>
         <button class="toggle-button">−</button>
       </div>
       <div class="panel-content">
-        <div style="margin-left: 5px">
-          <p style="margin: 0 0 8px 0">
-            <i class="fa fa-newspaper" style="color: orange"></i> Papir
+        <div class="legend-content">
+          <p class="legend-item">
+            <i class="fa fa-newspaper icon-orange"></i> Papir
           </p>
-          <p style="margin: 0 0 8px 0">
-            <i class="fa fa-battery-full" style="color: blue"></i> Baterije
+          <p class="legend-item">
+            <i class="fa fa-battery-full icon-blue"></i> Baterije
           </p>
-          <p style="margin: 0 0 8px 0">
-            <i class="fa fa-recycle" style="color: purple"></i> Aluminijum
+          <p class="legend-item">
+            <i class="fa fa-recycle icon-purple"></i> Aluminijum
           </p>
-          <p style="margin: 0 0 8px 0">
-            <i class="fa fa-recycle" style="color: green"></i> Kombinovano
+          <p class="legend-item">
+            <i class="fa fa-recycle icon-green"></i> Kombinovano
           </p>
         </div>
       </div>
@@ -293,7 +408,25 @@
       <button class="menu-button" onclick="togglePanel('legend')">
         <i class="fa fa-list"></i>
       </button>
+      <button
+        class="menu-button"
+        onclick="requestUserLocation()"
+        id="mobile-geolocation-btn"
+        style="display: none"
+      >
+        <i class="fa fa-location-arrow"></i>
+      </button>
     </div>
+
+    <button
+      class="geolocation-button"
+      onclick="requestUserLocation()"
+      id="desktop-geolocation-btn"
+      style="display: none"
+    >
+      <i class="fa fa-location-arrow"></i>
+      <span>Moja lokacija</span>
+    </button>
 
     <div class="logo">
       <img src="kplogo.png" alt="KP Logo" />
@@ -324,19 +457,21 @@
       }
     </script>
 
-    <div class="folium-map" id="map_51cbb90e3763f2ebacfb9351343e5534"></div>
+    <div class="folium-map" id="recyclingMap"></div>
+
+    <div class="loading-indicator" id="loadingIndicator">
+      <div class="spinner"></div>
+      <div>Učitavanje reciklažnih mesta...</div>
+    </div>
   </body>
   <script>
-    var map_51cbb90e3763f2ebacfb9351343e5534 = L.map(
-      "map_51cbb90e3763f2ebacfb9351343e5534",
-      {
-        center: [45.2671, 19.8335],
-        crs: L.CRS.EPSG3857,
-        zoom: 12.5,
-        zoomControl: true,
-        preferCanvas: false,
-      }
-    );
+    var recyclingMap = L.map("recyclingMap", {
+      center: [45.2671, 19.8335],
+      crs: L.CRS.EPSG3857,
+      zoom: 12.5,
+      zoomControl: true,
+      preferCanvas: false,
+    });
 
     var tile_layer_513e03d3631fb515d481a3220a9fa72f = L.tileLayer(
       "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -354,21 +489,30 @@
       }
     );
 
-    tile_layer_513e03d3631fb515d481a3220a9fa72f.addTo(
-      map_51cbb90e3763f2ebacfb9351343e5534
-    );
+    tile_layer_513e03d3631fb515d481a3220a9fa72f.addTo(recyclingMap);
 
     // Geolocation support - get user's location
     var userLocationMarker = null;
 
-    if (navigator.geolocation) {
+    // Function to request user's location
+    function requestUserLocation() {
+      if (!navigator.geolocation) {
+        console.log("Geolocation is not supported by this browser.");
+        return;
+      }
+
       navigator.geolocation.getCurrentPosition(
         function (position) {
           var userLat = position.coords.latitude;
           var userLng = position.coords.longitude;
 
+          // Remove existing marker if any
+          if (userLocationMarker) {
+            recyclingMap.removeLayer(userLocationMarker);
+          }
+
           // Center map on user's location with appropriate zoom
-          map_51cbb90e3763f2ebacfb9351343e5534.setView([userLat, userLng], 14);
+          recyclingMap.setView([userLat, userLng], 14);
 
           // Add marker for user's location
           var userIcon = L.AwesomeMarkers.icon({
@@ -380,15 +524,36 @@
           });
 
           userLocationMarker = L.marker([userLat, userLng], { icon: userIcon })
-            .addTo(map_51cbb90e3763f2ebacfb9351343e5534)
+            .addTo(recyclingMap)
             .bindPopup("Vaša lokacija");
         },
         function (error) {
           // User denied permission or geolocation unavailable
           // Keep default center (Novi Sad)
-          console.log("Geolocation not available: ", error.message);
+          var errorMessage = "Geolocation not available: " + error.message;
+          console.log(errorMessage);
+
+          // Show error message to user (optional - you can customize this)
+          if (error.code === error.PERMISSION_DENIED) {
+            alert(
+              "Pristup lokaciji je odbijen. Molimo omogućite pristup lokaciji u postavkama pregledača."
+            );
+          } else if (error.code === error.POSITION_UNAVAILABLE) {
+            alert("Lokacija nije dostupna. Proverite da li je GPS omogućen.");
+          } else if (error.code === error.TIMEOUT) {
+            alert("Zahtev za lokaciju je istekao. Pokušajte ponovo.");
+          }
         }
       );
+    }
+
+    // Show geolocation button if geolocation is available
+    if (navigator.geolocation) {
+      document.getElementById("desktop-geolocation-btn").style.display = "flex";
+      document.getElementById("mobile-geolocation-btn").style.display = "flex";
+
+      // Try to get location automatically on page load
+      requestUserLocation();
     }
 
     // Load markers from JSON and create them dynamically
@@ -508,17 +673,6 @@
       return styles[type] || { icon: "circle", color: "gray" };
     }
 
-    // Function to calculate offset coordinates for multiple markers at same location
-    function getOffsetCoordinates(baseCoords, index, total) {
-      // Small offset to spread markers (approximately 50 meters)
-      var offsetDistance = 0.0005; // degrees (roughly 50m)
-      var angle = (2 * Math.PI * index) / total; // Distribute in circle
-      return [
-        baseCoords[0] + offsetDistance * Math.cos(angle),
-        baseCoords[1] + offsetDistance * Math.sin(angle),
-      ];
-    }
-
     // Function to create marker(s) from data - supports multiple types
     function createMarker(markerData, types) {
       var markers = [];
@@ -528,9 +682,7 @@
 
       // If multiple types, create single universal green recycling icon
       if (markerTypes.length > 1) {
-        var marker = L.marker(markerData.coordinates, {}).addTo(
-          map_51cbb90e3763f2ebacfb9351343e5534
-        );
+        var marker = L.marker(markerData.coordinates, {}).addTo(recyclingMap);
 
         // Universal green recycling icon for multiple types
         var icon = L.AwesomeMarkers.icon({
@@ -558,7 +710,7 @@
 
         var popup = L.popup({ maxWidth: "100%" });
         var htmlContent = $(
-          '<div style="width: 100.0%; height: 100.0%;">' + popupText + "</div>"
+          '<div class="popup-content">' + popupText + "</div>"
         )[0];
         popup.setContent(htmlContent);
         marker.bindPopup(popup);
@@ -571,9 +723,7 @@
       } else {
         // Single type - create marker with specific icon
         var type = markerTypes[0];
-        var marker = L.marker(markerData.coordinates, {}).addTo(
-          map_51cbb90e3763f2ebacfb9351343e5534
-        );
+        var marker = L.marker(markerData.coordinates, {}).addTo(recyclingMap);
 
         var style = getMarkerStyle(type);
         var icon = L.AwesomeMarkers.icon({
@@ -587,9 +737,7 @@
 
         var popup = L.popup({ maxWidth: "100%" });
         var htmlContent = $(
-          '<div style="width: 100.0%; height: 100.0%;">' +
-            markerData.name +
-            "</div>"
+          '<div class="popup-content">' + markerData.name + "</div>"
         )[0];
         popup.setContent(htmlContent);
         marker.bindPopup(popup);
@@ -625,6 +773,8 @@
     }
 
     // Load markers from JSON file
+    var loadingIndicator = document.getElementById("loadingIndicator");
+
     fetch("markers.json")
       .then((response) => response.json())
       .then((data) => {
@@ -633,11 +783,16 @@
           console.error("Error: markers.json must contain an array");
           validationErrors.push("markers.json mora biti niz objekata");
           logValidationErrors();
+          // Hide loading indicator
+          if (loadingIndicator) {
+            loadingIndicator.classList.add("hidden");
+          }
           return;
         }
 
         markersData = data;
         validationErrors = []; // Reset errors
+        var validLocationsCount = 0; // Track number of successfully processed locations
 
         // Validate and create markers
         data.forEach(function (markerData, index) {
@@ -657,6 +812,8 @@
                 markerCounts.paper++;
               }
             });
+
+            validLocationsCount++; // Count this as a successfully processed location
           } else {
             // Log validation errors
             console.error(
@@ -676,20 +833,32 @@
         logValidationErrors();
 
         // Log validation summary
-        var totalMarkers =
+        var totalTypeInstances =
           markerCounts.battery + markerCounts.aluminum + markerCounts.paper;
-        var skippedMarkers = data.length - totalMarkers;
+        var skippedLocations = data.length - validLocationsCount;
         console.log("Marker validation summary:", {
-          total: totalMarkers,
+          totalLocations: data.length,
+          validLocations: validLocationsCount,
+          skippedLocations: skippedLocations,
+          totalTypeInstances: totalTypeInstances,
           battery: markerCounts.battery,
           aluminum: markerCounts.aluminum,
           paper: markerCounts.paper,
-          skipped: skippedMarkers,
           errors: validationErrors.length,
         });
+
+        // Hide loading indicator
+        if (loadingIndicator) {
+          loadingIndicator.classList.add("hidden");
+        }
       })
       .catch((error) => {
         console.error("Error loading markers.json:", error);
+
+        // Hide loading indicator even on error
+        if (loadingIndicator) {
+          loadingIndicator.classList.add("hidden");
+        }
       });
   </script>
 </html>
